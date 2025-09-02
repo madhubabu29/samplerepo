@@ -3,11 +3,28 @@
 <head>
   <title>Bank Statement Analyzer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Chart.js for future charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <script src="script.js"></script>
   <h1>Bank Statement Analyzer</h1>
-  <input type="file" id="fileInput" />
+  <input type="file" id="fileInput" accept=".csv" />
+
+  <div id="summary" style="display:none;">
+    <h2>Summary</h2>
+    <p id="income"></p>
+    <p id="expense"></p>
+    <p id="balance"></p>
+  </div>
+
   <div id="tableDiv"></div>
+
+  <!-- Placeholder for future charts -->
+  <!-- <canvas id="pieChart" width="400" height="200"></canvas> -->
+  <!-- <canvas id="barChart" width="400" height="200"></canvas> -->
+
+  <script src="script.js"></script>
 </body>
 </html>
