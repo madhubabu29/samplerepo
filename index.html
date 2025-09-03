@@ -9,24 +9,42 @@
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <h1>Bank Statement Analyzer</h1>
-  <input type="file" id="fileInput" accept=".csv" />
-
-  <div id="summary" style="display:none;">
-    <h2>Summary</h2>
-    <p id="income"></p>
-    <p id="expense"></p>
-    <p id="balance"></p>
+  <div class="container">
+    <!-- Header: Total Debits and Credits -->
+    <div class="header">
+      <div id="totalDebits" class="summary-box"></div>
+      <div id="totalCredits" class="summary-box"></div>
+    </div>
+    <div class="main-area">
+      <!-- Sidebar: Category Links -->
+      <aside class="sidebar">
+        <h2>Categories</h2>
+        <ul id="categoryList"></ul>
+      </aside>
+      <!-- Main content: Charts & File Upload -->
+      <section class="content">
+        <div class="upload-box">
+          <label for="fileInput" class="upload-label">Upload Bank Statement (.csv):</label>
+          <input type="file" id="fileInput" accept=".csv">
+        </div>
+        <div class="charts-section">
+          <div class="chart-container">
+            <h3 id="pieChartTitle">Expenses by Category</h3>
+            <canvas id="pieChart" width="400" height="300"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3 id="barChartTitle">Expenses by Day of the Month</h3>
+            <canvas id="barChart" width="400" height="300"></canvas>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Transaction Table -->
+    <div class="table-section">
+      <h2>Transactions</h2>
+      <div id="tableDiv"></div>
+    </div>
   </div>
-
-  <div id="charts" style="display:none;">
-    <h2>Charts</h2>
-    <canvas id="pieChart" width="400" height="200"></canvas>
-    <canvas id="barChart" width="400" height="200"></canvas>
-  </div>
-
-  <div id="tableDiv"></div>
-
   <script src="script.js"></script>
 </body>
 </html>
